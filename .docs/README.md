@@ -91,7 +91,7 @@ nettrine.extensions.atlantic18:
 
 IpTraceable requires client IP address:
 
-```
+```yaml
 nettrine.extensions.atlantic18:
     ipTraceable:
         ipValue: @Nette\Http\IRequest::getRemoteAddress()
