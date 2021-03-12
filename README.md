@@ -21,7 +21,7 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
     - [Loggable, Translatable, Treeable](.docs/README.md#loggable-translatable-treeable)
     - [Translatable](.docs/README.md#translatable)
     - [IpTraceable](.docs/README.md##iptraceable)
-    
+
 ## Versions
 
 | State       | Version     | Branch   | Nette  | PHP    |
@@ -42,13 +42,6 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
         </a>
         </br>
         <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
-      </td>
-      <td align="center">
-        <a href="https://github.com/mabar">
-            <img width="150" height="150" src="https://avatars0.githubusercontent.com/u/20974277?s=150&v=4">
-        </a>
-        </br>
-        <a href="https://github.com/mabar">Marek Bartoš</a>
       </td>
     </tr>
   </tbody>
