@@ -1,50 +1,121 @@
-# Nettrine Extensions Atlantic18
+![](https://heatbadger.now.sh/github/readme/contributte/doctrine-gedmo/?deprecated=1)
 
-Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework
+<p align=center>
+    <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
+    <a href="https://bit.ly/cttfo"><img src="https://badgen.net/badge/support/forum/yellow"></a>
+    <a href="https://contributte.org/partners.html"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
+</p>
 
-[![Build Status](https://img.shields.io/travis/nettrine/extensions-atlantic18.svg?style=flat-square)](https://travis-ci.org/nettrine/extensions-atlantic18)
-[![Code coverage](https://img.shields.io/coveralls/nettrine/extensions-atlantic18.svg?style=flat-square)](https://coveralls.io/r/nettrine/extensions-atlantic18)
-[![Licence](https://img.shields.io/packagist/l/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![Downloads this Month](https://img.shields.io/packagist/dm/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![Downloads total](https://img.shields.io/packagist/dt/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![Latest stable](https://img.shields.io/packagist/v/nettrine/extensions-atlantic18.svg?style=flat-square)](https://packagist.org/packages/nettrine/extensions-atlantic18)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+<p align=center>
+    Website 🚀 <a href="https://contributte.org">contributte.org</a> | Contact 👨🏻‍💻 <a href="https://f3l1x.io">f3l1x.io</a> | Twitter 🐦 <a href="https://twitter.com/contributte">@contributte</a>
+</p>
 
-## Discussion / Help
+## Disclaimer
 
-[![Join the chat](https://img.shields.io/gitter/room/nettrine/nettrine.svg?style=flat-square)](https://gitter.im/nettrine/nettrine)
+| :warning: | This project is no longer being maintained. Please use [nettrine/extensions-atlantic18](https://github.com/nettrine/extensions-atlantic18).
+|---|---|
 
-## Overview
+| Composer | [`nettrine/extensions`](https://packagist.org/packages/nettrine/extensions) |
+|---| --- |
+| Version | ![](https://badgen.net/packagist/v/nettrine/extensions) |
+| PHP | ![](https://badgen.net/packagist/php/nettrine/extensions) |
+| License | ![](https://badgen.net/github/license/contributte/doctrine-gedmo) |
 
-- [Setup](.docs/README.md#setup)
-- [Configuration](.docs/README.md#configuration)
-    - [Loggable, Translatable, Treeable](.docs/README.md#loggable-translatable-treeable)
-    - [Translatable](.docs/README.md#translatable)
-    - [IpTraceable](.docs/README.md##iptraceable)
+## Documentation
 
-## Versions
+Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/DoctrineExtensions)) extension for Nette Framework.
 
-| State       | Version     | Branch   | Nette  | PHP    |
-|-------------|-------------|----------|--------|--------|
-| dev         | `^0.5`      | `master` | `3.0+` | `^7.2` |
-| stable      | `^0.4`      | `master` | `3.0+` | `^7.2` |
-| stable      | `^0.3`      | `master` | `2.4`  | `^7.1` |
-| stable      | `^0.2`      | `master` | `2.4`  | `^5.6` |
+### Setup
 
-## Maintainers
+1. First of all, ensure you have installed [Nettrine DBAL](https://github.com/nettrine/dbal) and [Nettrine ORM](https://github.com/nettrine/orm) packages.
 
-<table>
-  <tbody>
-    <tr>
-      <td align="center">
-        <a href="https://github.com/f3l1x">
-            <img width="150" height="150" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=150">
-        </a>
-        </br>
-        <a href="https://github.com/f3l1x">Milan Felix Šulc</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+2. Configure Nette DI extension.
 
-Thank you for testing, reporting and contributing.
+  ```neon
+  // config/config.neon
+  extensions:
+    nettrine.extensions.atlantic18: Nettrine\Extensions\Atlantic18\DI\Atlantic18BehaviorExtension
+  ```
+
+### Configuration
+
+By default all listeners are disabled, enable only required listeners.
+
+```neon
+nettrine.extensions.atlantic18:
+	loggable: off
+	sluggable: off
+	softDeleteable: off
+	treeable: off
+	blameable: off
+	timestampable: off
+	translatable: off
+	uploadable: off
+	sortable: off
+	ipTraceable: off
+```
+
+#### Loggable, Translatable, Treeable
+
+Setup extra entity mapping.
+
+```neon
+extensions:
+	orm.annotations: Nettrine\ORM\DI\OrmAnnotationsExtension
+
+orm.annotations:
+	paths:
+		# your app entities
+		- App/Model/Database/Entity
+		# doctrine extensions entities
+		- Gedmo\Loggable\Entity
+		- Gedmo\Loggable\Entity
+		- Gedmo\Tree\Entity
+```
+
+If you using `nettrine/dbal` all listeners are registered automatically, or you have to register it manually:
+
+```php
+// Get EventManager, from DI or Entity Manager
+$evm = $em->getEventManager();
+
+// Register desired listener to event
+$evm->addEventSubscriber($listener);
+
+```
+#### [Translatable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/translatable.md)
+
+TranslatableListener has a complex configuration:
+
+```neon
+nettrine.extensions.atlantic18:
+	translatable:
+		translatable: cs_CZ
+		default: cs_CZ
+		translationFallback: off
+		persistDefaultTranslation: off
+		skipOnLoad: off
+```
+
+#### [IpTraceable](https://github.com/Atlantic18/DoctrineExtensions/blob/v2.4.x/doc/ip_traceable.md)
+
+IpTraceable requires client IP address:
+
+```neon
+nettrine.extensions.atlantic18:
+	ipTraceable:
+		ipValue: @Nette\Http\IRequest::getRemoteAddress()
+```
+
+## Development
+
+This package was maintain by these authors.
+
+<a href="https://github.com/f3l1x">
+  <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
+</a>
+
+-----
+
+Consider to [support](https://contributte.org/partners.html) **contributte** development team.
+Also thank you for being used this package.

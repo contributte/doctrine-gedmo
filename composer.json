@@ -1,18 +1,14 @@
 {
-  "name": "nettrine/extensions-atlantic18",
+  "name": "contributte/doctrine-gedmo",
   "description": "Doctrine2 behavioral extensions for Nette Framework",
   "keywords": ["nette", "doctrine", "orm", "database"],
   "type": "library",
   "license": "MIT",
-  "homepage": "https://github.com/nettrine/extensions-atlantic18",
+  "homepage": "https://github.com/contributte/doctrine-gedmo",
   "authors": [
     {
       "name": "Milan Felix Šulc",
       "homepage": "https://f3l1x.io"
-    },
-    {
-      "name": "Josef Benjac",
-      "homepage": "http://josefbenjac.com"
     }
   ],
   "require": {
