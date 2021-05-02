@@ -190,7 +190,7 @@ jobs:
               run: "${{ env.composer-install }}"
 
             - name: "Tests"
-              run: "make coverage"
+              run: "make coverage-clover"
 
             - name: "Coveralls.io"
               env:

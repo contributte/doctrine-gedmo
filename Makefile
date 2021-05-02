@@ -22,8 +22,11 @@ phpstan: ## Analyse code with PHPStan
 
 # Tests
 
-tests: ## Run all tests
-	vendor/bin/phpunit tests --cache-result-file=tests/tmp/phpunit.cache --colors=always
+tests:
+	vendor/bin/tester -s -p php --colors 1 -C tests/cases
 
-coverage: ## Generate code coverage in XML format
-	phpdbg -qrr vendor/bin/phpunit tests --cache-result-file=tests/tmp/phpunit.cache --colors=always -c tests/coverage.xml
+coverage-clover:
+	vendor/bin/tester -s -p phpdbg --colors 1 -C --coverage ./coverage.xml --coverage-src ./src tests/cases
+
+coverage-html:
+	vendor/bin/tester -s -p phpdbg --colors 1 -C --coverage ./coverage.html --coverage-src ./src tests/cases
