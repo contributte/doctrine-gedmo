@@ -1,7 +1,12 @@
 {
   "name": "contributte/doctrine-gedmo",
   "description": "Doctrine2 behavioral extensions for Nette Framework",
-  "keywords": ["nette", "doctrine", "orm", "database"],
+  "keywords": [
+    "nette",
+    "doctrine",
+    "orm",
+    "database"
+  ],
   "type": "library",
   "license": "MIT",
   "homepage": "https://github.com/contributte/doctrine-gedmo",
