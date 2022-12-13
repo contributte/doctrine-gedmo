@@ -12,7 +12,7 @@
 
 ## Disclaimer
 
-| :warning: | This project is no longer being maintained. Please use [nettrine/extensions-atlantic18](https://github.com/nettrine/extensions-atlantic18).
+| :warning: | This project is no longer being maintained. Please use [nettrine/extensions-atlantic18](https://github.com/contributte/doctrine-extensions-atlantic18).
 |---|---|
 
 | Composer | [`nettrine/extensions`](https://packagist.org/packages/nettrine/extensions) |
@@ -27,7 +27,7 @@ Doctrine ([Atlantic18/DoctrineExtensions](https://github.com/Atlantic18/Doctrine
 
 ### Setup
 
-1. First of all, ensure you have installed [Nettrine DBAL](https://github.com/nettrine/dbal) and [Nettrine ORM](https://github.com/nettrine/orm) packages.
+1. First of all, ensure you have installed [nettrine/dbal](https://github.com/contributte/doctrine-dbal) and [Nettrine ORM](https://github.com/contributte/doctrine-orm) packages.
 
 2. Configure Nette DI extension.
 
