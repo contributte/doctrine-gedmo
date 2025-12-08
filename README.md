@@ -15,10 +15,10 @@
 | :warning: | This project is no longer being maintained. Please use [nettrine/extensions-atlantic18](https://github.com/contributte/doctrine-extensions-atlantic18).
 |---|---|
 
-| Composer | [`nettrine/extensions`](https://packagist.org/packages/nettrine/extensions) |
-|---| --- |
-| Version | ![](https://badgen.net/packagist/v/nettrine/extensions) |
-| PHP | ![](https://badgen.net/packagist/php/nettrine/extensions) |
+| Composer | [`contributte/doctrine-gedmo`](https://packagist.org/packages/contributte/doctrine-gedmo) |
+|---|---|
+| Version | ![](https://badgen.net/packagist/v/contributte/doctrine-gedmo) |
+| PHP | ![](https://badgen.net/packagist/php/contributte/doctrine-gedmo) |
 | License | ![](https://badgen.net/github/license/contributte/doctrine-gedmo) |
 
 ## Documentation
@@ -109,7 +109,7 @@ nettrine.extensions.atlantic18:
 
 ## Development
 
-This package was maintain by these authors.
+This package was maintained by these authors.
 
 <a href="https://github.com/f3l1x">
   <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
@@ -118,4 +118,4 @@ This package was maintain by these authors.
 -----
 
 Consider to [support](https://contributte.org/partners.html) **contributte** development team.
-Also thank you for being used this package.
+Also thank you for using this package.
